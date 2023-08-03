@@ -73,4 +73,8 @@ Replace path/to/junit.jar and path/to/hamcrest.jar with the actual paths to the 
 
 1. Go to the test file "TestFootballScoreBoard". Right click on each test case and select "Run Test". This will run every test case function seperately or right click and select "Run tests in Current File", which will run all the test cases in a file.
 
+## Assumptions and Solutions from my Side:
 
+1. Currently Scoreboard can take unlimited number of games to be added. We can set the limit number of games to be added.
+2. The program keep track of games in memory at the time of execution only and lost data when the program terminated. We can use database or file system to store games data to be used later.
+3. Assuming that the maximum score for a game is a positive integer. The program currently checks for negative scores, but it does not check for extremely large scores that might exceed the data type's limit.
