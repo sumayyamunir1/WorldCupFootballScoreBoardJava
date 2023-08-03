@@ -280,6 +280,15 @@ public class TestFootballScoreBoard {
         String actualOutput = outputStream.toString().trim().replace("\r", "");
         assertEquals(expectedOutput, actualOutput);
     }
+    @Test
+    public void testGetSummaryWithEmptyBoardGames() {
+        scoreboard_obj = new FootballScoreBoard();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        scoreboard_obj.getSummary();
+        String expectedOutput = "No games found in the scoreboard.";
+        assertEquals(expectedOutput, outputStream.toString().trim());
+    }
 /*
     @Test
     public void testGameStartWithNonIntegerInput() {
